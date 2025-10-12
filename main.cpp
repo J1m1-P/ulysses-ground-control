@@ -16,11 +16,5 @@ int main(int argc, char *argv[])
         Qt::QueuedConnection);
     engine.loadFromModule("ulysses_ground_control", "Main");
 
-
-    // QQuickView view;
-    // view.setSource(QUrl(QStringLiteral("Source Files/Main.qml")));
-    // view.showFullScreen();
-
-
     return app.exec();
 }

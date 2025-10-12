@@ -1,8 +1,11 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
+import "Items"
 
-Rectangle {
+BasePanel {
+    id: panel_IMU
+
     //Parameters
     property double x_axis
     property double y_axis
@@ -11,41 +14,21 @@ Rectangle {
     property double pitch
     property double yaw
 
-
-    //Initializing the Panel
-    id: panel_IMU
-    color: "#1F2937"
-    border.color: "#2d3748"
-    border.width: 4
-    radius: 8
-    height: (parent.parent.height - 20)/2 - 10
-    width: (parent.parent.width - 20)/4 - 5
-
-
-    Rectangle {
-        id: header
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.topMargin: 15
-        anchors.leftMargin: 15
-        height: 50
-        Text {
-            //Initializing Header for IMU Data
-            id: header_IMU_Data
-            color: "#93C5FD"
-            text: "IMU Data"
-            font.pixelSize: 20
-            font.bold: true
-        }
+    BaseHeader {
+        id:header
+        headerText: "IMU Data"
     }
 
     Rectangle {
         id: accelerometer
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.topMargin: header.height
-        anchors.leftMargin: header.anchors.leftMargin
-        height: 200
+
+        height: 100
+        anchors {
+            top: parent.top
+            left: parent.left
+            topMargin: header.height
+            leftMargin: header.anchors.leftMargin
+        }
 
         Text {
             id: subheader_acc
@@ -56,41 +39,24 @@ Rectangle {
             y: 0
         }
 
-        Rectangle {
+        DataBoxList {
             anchors.top: subheader_acc.bottom
-            anchors.left: parent.left
             width: panel_IMU.width;
 
-            DataBox {
-                dataName: "X-AXIS"
-                dataValue: x_axis
-                sections: 3
-                section_num: 1
-            }
-            DataBox {
-                dataName: "Y-AXIS"
-                dataValue: y_axis
-                sections: 3
-                section_num: 2
-            }
-            DataBox {
-                dataName: "Z-AXIS"
-                dataValue: z_axis
-                sections: 3
-                section_num: 3
-            }
+            size: 3
+            dataNames: ["X-AXIS", "Y-AXIS", "Z-AXIS"]
+            dataValues: [100,200,300]
         }
-
     }
-
 
     Rectangle {
         id: gyroscope
-        anchors.top: parent.top
-        anchors.left: parent.left
-        anchors.topMargin: header.height + accelerometer.height
-        anchors.leftMargin: header.anchors.leftMargin
-        height: 200
+
+        anchors {
+            top: accelerometer.bottom
+            left: parent.left
+            leftMargin: header.anchors.leftMargin
+        }
 
         Text {
             id: subheader_gyro
@@ -101,30 +67,13 @@ Rectangle {
             y: 0
         }
 
-        Rectangle {
+        DataBoxList {
             anchors.top: subheader_gyro.bottom
-            anchors.left: parent.left
             width: panel_IMU.width;
 
-            DataBox {
-                dataName: "ROLL"
-                dataValue: roll
-                sections: 3
-                section_num: 1
-            }
-            DataBox {
-                dataName: "PITCH"
-                dataValue: pitch
-                sections: 3
-                section_num: 2
-            }
-            DataBox {
-                dataName: "YAW"
-                dataValue: yaw
-                sections: 3
-                section_num: 3
-            }
+            size: 3
+            dataNames: ["ROLL", "PITCH", "YAW"]
+            dataValues: [1,2,3]
         }
-
     }
 }

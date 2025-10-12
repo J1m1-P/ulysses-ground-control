@@ -3,12 +3,14 @@ import QtQuick
 Rectangle {
     //Initializing the Header
     id: header
-    anchors.top: parent.top
-    anchors.left: parent.left
-    anchors.right: parent.right
+
     height: 70
     color: "#111827"
-
+    anchors {
+        top: parent.top
+        left: parent.left
+        right: parent.right
+    }
 
     Text {
         id: title

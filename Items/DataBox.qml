@@ -5,7 +5,6 @@ Rectangle {
     property double dataValue
     property int sections       //How many boxes are together
     property int section_num    //Which box is this one
-    // property bool row: true
 
     height: 50
     width: (parent.width-18*sections)/sections
@@ -18,8 +17,8 @@ Rectangle {
 
 
     Text {
-
         id: name
+
         text: dataName
         font.pixelSize: 14
         color: "#729AAF"
@@ -29,6 +28,7 @@ Rectangle {
     }
     Text {
         id: value
+
         anchors.top: name.bottom
         text: dataValue
         font.pixelSize: 14
