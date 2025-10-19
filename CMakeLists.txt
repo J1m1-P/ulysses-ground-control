@@ -23,22 +23,19 @@ qt_add_qml_module(appulysses_ground_control
 
         #
         Panel_Test.qml
-        Panel_IMU_Data.qml
-        Panel_Kalman_Filtered_Angle.qml
+        Panel_IMU_And_Kalman_Data.qml
         Panel_Rocket_Visualization.qml
-        Panel_Baro_Data.qml
+        Panel_Baro_And_Telemetry_Data.qml
         Panel_Engine_Control.qml
-        Panel_Telemetry_Data.qml
         Panel_System_Alert.qml
-        QML_FILES Panels/IMU_Data.qml
-        QML_FILES
-        QML_FILES
-        QML_FILES
-        QML_FILES Items/Data.qml
-        QML_FILES Items/BasePanel.qml
-        QML_FILES Items/BaseHeader.qml
-        QML_FILES Items/DataBoxList.qml
-        QML_FILES Items/DataBox.qml
+
+        Panels/IMU_Data.qml
+
+        Items/Data.qml
+        Items/BasePanel.qml
+        Items/BaseHeader.qml
+        Items/DataBoxList.qml
+        Items/DataBox.qml
 )
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

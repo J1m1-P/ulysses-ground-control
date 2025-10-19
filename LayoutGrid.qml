@@ -16,30 +16,34 @@ GridLayout {
     }
 
     //The Panels
-    Panel_IMU_Data {
-        //Passing in arguments
+    Panel_IMU_And_Kalman_Data {
+        //IMU Data
         x_axis: 10
         y_axis: 11
         z_axis: 12
         roll: 20
         pitch: 30
         yaw: 40
+
+        //Kalman Data
+        raw_angle: 10
+        filtered_angle: 20
     }
 
-    Panel_Kalman_Filtered_Angle {
+    Panel_Test {
     }
 
     Panel_Rocket_Visualization {
         Layout.columnSpan: 2
     }
 
-    Panel_Baro_Data {
+    Panel_Test {
     }
 
     Panel_Engine_Control {
     }
 
-    Panel_Telemetry_Data {
+    Panel_Baro_Data {
     }
 
     Panel_System_Alert {

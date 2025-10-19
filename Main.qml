@@ -29,7 +29,6 @@ ApplicationWindow {
         height: parent.height - (headerMain.height) - 4
         color: "#111827"
         anchors {
-            // fill.parent: parent
             top: headerMain.bottom
             horizontalCenter: parent.horizontalCenter
         }
